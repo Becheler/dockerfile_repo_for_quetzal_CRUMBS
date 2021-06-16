@@ -8,9 +8,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install GDAL dependencies for python
 RUN set -xe \
-    apt-get update -y \
-    apt-get install -y gdal-bin libpq-dev libmysqlclient-dev libgdal-dev --no-install-recommends \
-    apt-get clean -y
+    apt update -y \
+    apt install -y gdal-bin libpq-dev libmysqlclient-dev libgdal-dev --no-install-recommends \
+    apt clean -y
 
 # Update C env vars so compiler can find gdal
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
@@ -29,7 +29,7 @@ ENV PATH="$PATH:$PYTHON_BIN_PATH"
 RUN pipenv install numpy GDAL
             
 RUN set -xe \ 
-    apt-get autoclean && \
-    apt-get autoremove && \
-    apt-get clean && \
+    apt autoclean && \
+    apt autoremove && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
