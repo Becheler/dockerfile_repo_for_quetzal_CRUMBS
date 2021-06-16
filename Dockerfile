@@ -17,12 +17,15 @@ ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 
 # Python
-
 RUN set -xe \
     apt-get install python3-pip \
-    sudo pip install --upgrade pip \
-    sudo -H pip install -U pipenv \
-    sudo pip install numpy GDAL
+    pip3 install --upgrade pip
+    
+# Pipenv
+RUN pip3 install pipenv
+ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+ENV PATH="$PATH:$PYTHON_BIN_PATH"
+RUN pipenv install numpy GDAL
             
 RUN set -xe \ 
     apt-get autoclean && \
