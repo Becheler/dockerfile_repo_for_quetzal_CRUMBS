@@ -35,7 +35,7 @@ ENV PATH="$PATH:$PYTHON_BIN_PATH"
 RUN pipenv install numpy GDAL
             
 RUN set -xe \ 
-    apt autoclean && \
-    apt autoremove && \
-    apt clean && \
+    apt-get autoclean && \
+    apt-get autoremove && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
