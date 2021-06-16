@@ -16,9 +16,10 @@ RUN set -xe \
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 
-# Python
+# Python and pip3
 RUN set -xe \
-    apt-get install python3-pip \
+    sudo apt install python3-pip \
+    pip3 -v \
     pip3 install --upgrade pip
     
 # Pipenv
