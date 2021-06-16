@@ -20,8 +20,8 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 
 RUN set -xe \
     apt-get install python3-pip \
-    pip install --upgrade pip \
-    pip install pipenv numpy GDAL
+    sudo pip install --upgrade pip \
+    sudo pip install pipenv numpy GDAL
             
 RUN set -xe \ 
     apt-get autoclean && \
