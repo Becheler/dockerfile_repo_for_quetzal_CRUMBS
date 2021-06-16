@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 LABEL maintainer="Arnaud Becheler" \
-      description="Basic stuff for CircleCi repo." \
+      description="Basic things for quetzal-CRUMBS CircleCI repository." \
       version="0.1.0"
       
 ARG DEBIAN_FRONTEND=noninteractive
