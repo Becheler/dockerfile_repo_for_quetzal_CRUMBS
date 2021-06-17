@@ -25,7 +25,8 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 RUN set -xe \
     apt-get update && apt-get install -y \
     python3.8 \
-    python3-pip
+    python3-pip \
+    python3.8-venv
 
 RUN pip3 install --upgrade pip
 RUN pip3 -v
