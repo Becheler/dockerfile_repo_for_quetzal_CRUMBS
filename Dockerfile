@@ -35,9 +35,9 @@ RUN pip3 -v
 RUN pip3 install pipenv
 ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 ENV PATH="$PATH:$PYTHON_BIN_PATH"
-RUN pipenv install numpy
+RUN pip3 install numpy
 RUN ogrinfo --version
-RUN pipenv install GDAL==3.2.1 #version from ogrinfo
+RUN pip3 install GDAL==3.2.1 #version from ogrinfo
 
 RUN set -xe \
     apt-get autoclean && \
