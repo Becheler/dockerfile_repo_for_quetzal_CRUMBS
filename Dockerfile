@@ -30,7 +30,7 @@ RUN set -xe \
     --no-install-recommends
 
 RUN pip3 install --upgrade pip
-RUN pip3 install build pipenv numpy
+RUN pip3 install build twine pipenv numpy
 
 ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 ENV PATH="$PATH:$PYTHON_BIN_PATH"
