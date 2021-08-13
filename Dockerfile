@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:focal
 
 LABEL maintainer="Arnaud Becheler" \
       description="Basic things for quetzal-CRUMBS CircleCI repository." \
