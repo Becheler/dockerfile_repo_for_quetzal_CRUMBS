@@ -35,7 +35,7 @@ RUN pip3 install build twine pipenv numpy
 ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 ENV PATH="$PATH:$PYTHON_BIN_PATH"
 
-RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3
+RUN pip3 install GDAL==$(gdal-config --version) pyvolve==1.0.3 rasterio matplotlib imageio imageio-ffmpeg
 
 RUN set -xe \
     apt-get autoclean && \
